@@ -6,8 +6,8 @@ let TOKEN, categoryId
 
 beforeAll(async () => {
    const body = {
-    email: "jose@gmail.com",
-    password: "1234Jose",
+   email: "jose@gmail.com",
+   password: "1234Jose",
    }
    const res = await request(app)
       .post('/api/v1/users/login')

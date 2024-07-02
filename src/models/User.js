@@ -30,7 +30,13 @@ const User = sequelize.define('user', {
         allowNull: false,
         unique: true,
     },
-
+/*
+    role: {
+        type: DataTypes.ENUM({
+            values: ['user', "admin"], //Solo funciona con "user, admin" / El producto podra ser editado solo si el usuario tiene "seteado: admi en el Where" / Tambien se puede gace un "miderword"
+        })
+    }
+*/
 });
 User.beforeCreate( async(user)=>{
     const {password} = user
