@@ -1,10 +1,10 @@
 const catchError = require('../utils/catchError');
-const ProductImag = require('../models/ProductImag');
+const ProductImg = require('../models/ProductImg');
 const path = require('path')
 const fs = require('fs')
 
 const getAll = catchError(async(req, res) => {
-    const results = await ProductImag.findAll();
+    const results = await ProductImg.findAll();
     return res.json(results);
 });
 
@@ -20,13 +20,13 @@ const create = catchError(async(req, res) => {
     const { filename } = req.file
     const url = `${req.protocol}://${req.headers.host}/uploads/${filename}`
     
-    const result = await ProductImag.create({filename, url})
+    const result = await ProductImg.create({filename, url})
     return res.status(201).json(result);
 });
 
 const remove = catchError(async(req, res) => {
     const { id } = req.params;
-    const result = await ProductImag.findByPk(id)
+    const result = await ProductImg.findByPk(id)
     if (!result) return res.sendStatus(404)
     return res.sendStatus(204);
     

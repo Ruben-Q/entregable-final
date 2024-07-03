@@ -6,7 +6,7 @@ const testMigrate = async () => {
 
     try {
         await sequelize.sync({ force: true })
-        console.log('Base de tatos activa✅');    
+        console.log('Base de datos activa✅');    
         await user()
         process.exit()
     } catch (error) {

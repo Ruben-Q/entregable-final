@@ -5,7 +5,7 @@ const postMigrate = async () => {
 
     try {
         await sequelize.sync({ force: true })
-        console.log('Base de tatos activa✅');
+        console.log('Base de datos activa✅');
         process.exit()
     } catch (error) {
         console.error(error);

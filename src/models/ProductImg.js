@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
-const ProductImag = sequelize.define('modelName', {
+const ProductImg = sequelize.define('productImg', {
     url: {
         type: DataTypes.STRING,
         allowNull: false
@@ -11,8 +11,9 @@ const ProductImag = sequelize.define('modelName', {
         type: DataTypes.STRING,
         allowNull: false
     },
-
-    
+    // productId
+}, { 
+        timestamps: false // Desactivamos timestamps
 });
 
-module.exports = ProductImag;
+module.exports = ProductImg;
